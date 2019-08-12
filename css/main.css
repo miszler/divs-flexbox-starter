@@ -104,13 +104,14 @@ html {
 
 body {
   font-family: 'Source Sans Pro', sans-serif;
-  font-weight: 700;
-  padding: 2em;
+  font-size: 1.25em;
+  display: flex;
+  justify-content: center;
+  padding: 0em 2em;
   color: #fff;
-  height: 100%;
 }
 
-.wrapper {
+.flex-container {
   /*add display:flex and set justify-content to space-between*/
   display: flex;
   justify-content: space-between;
@@ -118,11 +119,11 @@ body {
   align-items: center;
 }
 
-.div-1, .div-2, .div-3 {
+.flex-items {
   /*give the divs a width of 30%, add display:flex, set justify-content and align-items to center*/
   color: #fff;
   line-height: 1.5em;
-  font-size: 1.25em;
+  font-size: 1em;
   height: auto;
   display: flex;
   width: 30%;
@@ -130,9 +131,48 @@ body {
   align-items: center;
 }
 
+p span {
+  font-family: 'Lora', sans-serif;
+}
 
+header,
+footer {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
 
+header h1 {
+  font-family: 'Lora', sans-serif;
+  font-size: 3em;
+}
 
+main {
+  width: 100%;
+  display: flex;
+  font-weight: 500;
+  justify-content: center;
+  padding-bottom: 1em;
+  padding-top: .5em;
+  border-bottom: 1px solid #fff;
+  margin-bottom: 30px;
+}
+
+main p{
+  font-size: 1.35em;
+}
+
+footer {
+  width: 100%;
+  height: auto;
+  border-top: 1px solid #fff;
+  margin-top: 30px;
+  padding-top: 20px;
+}
+
+footer i {
+  padding: 30px 20px 0 0;
+}
 /* ==========================================================================
    Helper classes
    ========================================================================== */
@@ -212,14 +252,23 @@ body {
    These examples override the primary ('mobile first') styles.
    Modify as content requires.
    ========================================================================== */
-@media all and (min-width: 1200px) {
-  .div-1, .div-2, .div-3 {
-    flex-basis: 30%;
-  }
-  .div-1, .div-2 {
-    border-right: 1px solid #555;
-    padding-right: 30px;
-  }
+@media all and (max-width: 768px) {
+    body {
+      padding: 1em;
+    }
+}
+
+@media (min-width: 1200px) {
+    .flex-items {
+      flex-basis: 30%;
+      border-bottom: none;
+    }
+
+    #div-2 p {
+      border-left: 1px solid #555;
+      border-right: 1px solid #555;
+      padding: 0 40px;
+    }
 }
 
 @media print,
